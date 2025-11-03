@@ -69,21 +69,12 @@ A CNN implementada possui a seguinte estrutura:
     \item passo 4;
 \end{itemize}
 
-O treinamento foi realizado utilizando o otimizador Adam, taxa de aprendizado de 0.001 e função de perda \textit{categorical crossentropy}.
-
 \subsection{Ambiente de Execução}
 Os experimentos foram realizados em Python 3.10, utilizando TensorFlow e Keras, em GPU NVIDIA RTX 3060 com 12GB de VRAM.
 
 % -----------------------
 \section{Resultados}
-A CNN atingiu uma acurácia média de 92\% no conjunto de teste, com uma matriz de confusão indicando bom equilíbrio entre sensibilidade e especificidade. A Figura~\ref{fig:roc} apresenta a curva ROC obtida.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.6\textwidth]{roc_curve.png}
-\caption{Curva ROC da CNN aplicada ao conjunto de teste.}
-\label{fig:roc}
-\end{figure}
+A CNN atingiu uma acurácia média de 92\% no conjunto de teste, com uma matriz de confusão indicando bom equilíbrio entre sensibilidade e especificidade.
 
 \begin{table}[H]
 \centering
