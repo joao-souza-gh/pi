@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+
+% -----------------------
+% Pacotes básicos
+% -----------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+
+\title{Análise de Imagens de Ressonância Magnética com Redes Neurais Convolucionais para Apoio ao Diagnóstico da Doença de Alzheimer}
+\author{
+    Gustavo Guerreiro \\
+    \textit{Curso de Ciência da Computação} \\
+    \textit{FURB} \\
+    \texttt{gustavo.guerreiro@furb.br}
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A Doença de Alzheimer é uma condição lorem.
+\end{abstract}
+
+\textbf{Palavras-chave:} Redes neurais convolucionais, Alzheimer, Ressonância magnética, Deep learning, Diagnóstico assistido por computador.
+
+\section{Introdução}
+lorem
+
+\section{Trabalhos Relacionados}
+Trabalhos relacionados
+
+\section{Materiais e Métodos}
+
+\subsection{Base de Dados}
+Foi utilizado o dataset xyz.
+
+\subsection{Pré-processamento}
+O pré-processamento incluiu:
+\begin{itemize}
+    \item passo 1;
+    \item passo 2;
+    \item passo 3.
+\end{itemize}
+
+\subsection{Arquitetura da Rede}
+A CNN implementada possui a seguinte estrutura:
+\begin{itemize}
+    \item passo 1;
+    \item passo 2;
+    \item passo 3;
+    \item passo 4;
+\end{itemize}
+
+O treinamento foi realizado utilizando o otimizador Adam, taxa de aprendizado de 0.001 e função de perda \textit{categorical crossentropy}.
+
+\subsection{Ambiente de Execução}
+Os experimentos foram realizados em Python 3.10, utilizando TensorFlow e Keras, em GPU NVIDIA RTX 3060 com 12GB de VRAM.
+
+% -----------------------
+\section{Resultados}
+A CNN atingiu uma acurácia média de 92\% no conjunto de teste, com uma matriz de confusão indicando bom equilíbrio entre sensibilidade e especificidade. A Figura~\ref{fig:roc} apresenta a curva ROC obtida.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{roc_curve.png}
+\caption{Curva ROC da CNN aplicada ao conjunto de teste.}
+\label{fig:roc}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Desempenho do modelo nos dados de teste.}
+\begin{tabular}{lccc}
+\toprule
+Métrica & Valor (\%) \\
+\midrule
+Acurácia & 92.1 \\
+Precisão & 90.5 \\
+Sensibilidade & 93.2 \\
+Especificidade & 91.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussão}
+lorem
+
+\section{Conclusão}
+lorem
+\section*{Referências}
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+
+\bibitem{teste2025}
+Sobrenome, Nome. \& Wei, Y. (2019). Teste de citação. \textit{IEEE}, 7, 166844–166852.
+
+\end{thebibliography}
+
+\end{document}
