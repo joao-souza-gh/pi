@@ -7,6 +7,8 @@
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{listings}
+\usepackage{color}
 \usepackage{cite}
 \usepackage{geometry}
 \geometry{a4paper, margin=2.5cm}
@@ -18,17 +20,24 @@
     urlcolor=blue
 }
 
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!5},
+    captionpos=b
+}
 
-\title{Análise de Imagens de Ressonância Magnética com Redes Neurais Convolucionais para Apoio ao Diagnóstico da Doença de Alzheimer}
+\title{Relatório de Desenvolvimento de Modelo de Classificação de Imagens com Redes Neurais Convolucionais}
 \author{
-    Gustavo Guerreiro \\
-    \textit{Bacharelado em Ciência da Computação} \\
-    \textit{FURB} \\
-    \texttt{gustavo.guerreiro@furb.br}
+    Gustavo Guerreiro \\ 
+    \textit{Bacharelado em Ciência da Computação} \\ 
+    \textit{FURB} \\ 
+    \texttt{gusguerreiro@furb.br}
     \and
-    João Martinho Schneider da Silva e Souza \\
-    \textit{Bacharelado em Ciência da Computação} \\
-    \textit{FURB} \\
+    João Martinho Schneider da Silva e Souza \\ 
+    \textit{Bacharelado em Ciência da Computação} \\ 
+    \textit{FURB} \\ 
     \texttt{jsouza5@furb.br}
 }
 \date{\today}
@@ -37,73 +46,74 @@
 
 \maketitle
 
-\begin{abstract}
-A Doença de Alzheimer é uma condição\dots
-\end{abstract}
+\textbf{Palavras-chave:} Redes neurais convolucionais, aprendizado profundo, classificação, processamento de imagem.
 
-\textbf{Palavras-chave:} Redes neurais convolucionais, Alzheimer, Ressonância magnética, Deep learning, Diagnóstico assistido por computador.
+\section{Descrição do Problema}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non augue a odio tincidunt porta. 
+Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias, a partir de uma base de dados pública.
 
-\section{Introdução}
-lorem
-
-\section{Trabalhos Relacionados}
-Trabalhos relacionados
-
-\section{Materiais e Métodos}
-
-\subsection{Base de Dados}
-Foi utilizado o dataset xyz.
+\section{Montagem e Preparação da Base de Dados}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. A base de dados foi composta por imagens obtidas de fontes abertas. 
+Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas em conjuntos de treino, validação e teste.
 
 \subsection{Pré-processamento}
-O pré-processamento incluiu:
 \begin{itemize}
-    \item passo 1;
-    \item passo 2;
-    \item passo 3.
+    \item Redimensionamento;
+    \item Normalização;
+    \item Aumento de dados;
+    \item Separação 80\% para treino e 20\% para teste.
 \end{itemize}
 
-\subsection{Arquitetura da Rede}
-A CNN implementada possui a seguinte estrutura:
-\begin{itemize}
-    \item passo 1;
-    \item passo 2;
-    \item passo 3;
-    \item passo 4;
-\end{itemize}
-
-\subsection{Ambiente de Execução}
-Os experimentos foram realizados em Python 3.13, utilizando TensorFlow e Keras, em GPU NVIDIA GeForce RTX 4060 com 16GB de VRAM.
+\section{Modelo / Arquitetura da Rede}
+A arquitetura da CNN foi definida conforme segue:
 
 
-\section{Resultados}
-A CNN atingiu uma acurácia média de 92\% no conjunto de teste, com uma matriz de confusão indicando bom equilíbrio entre sensibilidade e especificidade.
+\section{Treinamento, Classificação e Testes do Modelo}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam e função de perda categórica cruzada. 
+A acurácia foi avaliada no conjunto de teste após cada época.
+
+\section{Código-Fonte e Explicações}
+A seguir, um trecho simplificado do código desenvolvido:
+
+
+
+\section{Demonstração das Entradas e Saídas}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+A Figura \ref{fig:exemplo} ilustra um exemplo de imagem de entrada e a respectiva previsão gerada pelo modelo.
+
+
+
+\section{Apresentação e Discussão dos Resultados}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam e função de perda categórica cruzada. 
+A acurácia foi avaliada no conjunto de teste após cada época.
 
 \begin{table}[H]
 \centering
 \caption{Desempenho do modelo nos dados de teste.}
-\begin{tabular}{lccc}
+\label{tab:resultados}
+\begin{tabular}{lcc}
 \toprule
 Métrica & Valor (\%) \\
 \midrule
-Acurácia & 92.1 \\
-Precisão & 90.5 \\
-Sensibilidade & 93.2 \\
-Especificidade & 91.0 \\
+Acurácia & XX.X \\
+Precisão & XX.X \\
+Recall & XX.X \\
+F1-score & XX.X \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Discussão}
-lorem
-
 \section{Conclusão}
-lorem
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+O modelo proposto demonstrou resultados satisfatórios, podendo ser aprimorado com arquiteturas mais profundas ou técnicas de regularização mais avançadas.
 
 \bibliographystyle{plain}
 \begin{thebibliography}{9}
 
-\bibitem{teste2025}
-Sobrenome, Nome. (2025). Teste de citação. \textit{IEEE}.
+\bibitem{exemplo2025}
+Sobrenome, Nome. (2025). \textit{Título do Artigo}. IEEE.
 
 \end{thebibliography}
 
