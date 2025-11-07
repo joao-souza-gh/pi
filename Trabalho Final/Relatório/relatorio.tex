@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage[brazil]{babel}
+\usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
@@ -47,8 +47,7 @@
 \textbf{Palavras-chave:} Redes neurais convolucionais, aprendizado profundo, classificação, processamento de imagem.
 
 \section{Descrição do Problema}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non augue a odio tincidunt porta. 
-Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias, a partir de uma base de dados pública.
+Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias representando graus de Alzheimer, a partir de uma base de dados pública.
 
 \section{Montagem e Preparação da Base de Dados}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. A base de dados foi composta por imagens obtidas de fontes abertas. 
@@ -56,9 +55,8 @@ Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas
 
 \subsection{Pré-processamento}
 \begin{itemize}
-    \item Redimensionamento;
-    \item Normalização;
-    \item Aumento de dados;
+    \item Normalização.
+    \item Aumento de dados.
     \item Separação 80\% para treino e 20\% para teste.
 \end{itemize}
 
@@ -68,8 +66,7 @@ A arquitetura da CNN foi definida conforme segue:
 
 \section{Treinamento, Classificação e Testes do Modelo}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam e função de perda categórica cruzada. 
-A acurácia foi avaliada no conjunto de teste após cada época.
+O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam.
 
 \section{Código-Fonte e Explicações}
 A seguir, um trecho simplificado do código desenvolvido:
@@ -84,8 +81,6 @@ A Figura \ref{fig:exemplo} ilustra um exemplo de imagem de entrada e a respectiv
 
 \section{Apresentação e Discussão dos Resultados}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam e função de perda categórica cruzada. 
-A acurácia foi avaliada no conjunto de teste após cada época.
 
 \begin{table}[H]
 \centering
