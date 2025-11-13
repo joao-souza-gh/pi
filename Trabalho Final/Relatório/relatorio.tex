@@ -1,8 +1,13 @@
 \documentclass[12pt,a4paper]{article}
 
+\setlength{\oddsidemargin}{-0.5cm}
+\setlength{\evensidemargin}{-0.5cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textheight}{24cm}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
@@ -29,7 +34,7 @@
     captionpos=b
 }
 
-\title{Relatório de Desenvolvimento de Modelo de Classificação de Imagens com Redes Neurais Convolucionais}
+\title{Desenvolvimento de modelo de classificação de imagens com redes neurais convolucionais}
 \date{27 de novembro de 2025}
 
 \begin{document}
@@ -43,15 +48,19 @@
 \end{flushright}
 
 
+\textit{\textbf{Palavras-chave:} Redes neurais convolucionais, aprendizado profundo, classificação, processamento de imagem.}
 
-\textbf{Palavras-chave:} Redes neurais convolucionais, aprendizado profundo, classificação, processamento de imagem.
+\section{Descrição do problema}
 
-\section{Descrição do Problema}
-Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias representando graus de Alzheimer, a partir de uma base de dados pública.
+Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias representando graus do mal de Alzheimer, a partir de uma base de dados pública. Com isto, esperamos facilitar o processo de detecção da doença em seus estágios iniciais com base em radiografias do cérebro humano.
 
-\section{Montagem e Preparação da Base de Dados}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. A base de dados foi composta por imagens obtidas de fontes abertas. 
-Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas em conjuntos de treino, validação e teste.
+O projeto é conduzido em formato experimental, com treino, validação e teste sobre subconjuntos balanceados. O notebook utiliza TensorFlow e Keras para implementar e treinar redes neurais convolucionais, com foco em classificação multiclasse.
+
+\section{Montagem e preparação da base de dados}
+A base de dados foi composta por imagens obtidas de fontes abertas.
+Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas em conjuntos de treino, validação e teste. A base foi disponibilizada nas categorias \textit{não demente}, \textit{muito levemente demente}, \textit{levemente demente} e \textit{moderadamente demente}, que para obter maior acurácia reestruturamos em apenas três categorias, removendo a \textit{levemente demente}.
+
+Os dados são carregados por meio de pipelines da API do TensorFlow Data e as imagens são processadas em lotes e padronizadas na sua dimensão e escala. Há uma função chamada \texttt{normalizar\_img} que converte os valores de pixels para a faixa [0,1]. O conjunto é dividido automaticamente entre treino e teste, o que dá uma certa garantia de aleatoriedade e equilíbrio entre as classes.
 
 \subsection{Pré-processamento}
 \begin{itemize}
@@ -60,27 +69,40 @@ Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas
     \item Separação 80\% para treino e 20\% para teste.
 \end{itemize}
 
-\section{Modelo / Arquitetura da Rede}
-A arquitetura da CNN foi definida conforme segue:
+Durante o pré-processamento, o notebook aplica transformações simples de normalização e eventualmente do aumento de dados com rotações e espelhamentos horizontais. O objetivo é melhorar a capacidade de generalização do modelo e reduzir o \textit{overfitting}. Também usamos métodos de embaralhamento e cache para otimizar a leitura das imagens no treinamento.
+
+\section{Modelo/arquitetura da rede}
+
+O código usa TensorFlow e Keras para definir a rede neural convolucional.
+
+A arquitetura segue o padrão clássico das redes neurais conovolucionais para a classificação de imagens médicas:
+\begin{itemize}
+    \item Camadas convolucionais intercaladas com camadas de pooling (normalmente MaxPooling2D);
+    \item Camada de flatten para transformar o mapa de características em vetor unidimensional;
+    \item Camadas densas com ativação ReLU e uma camada final softmax para a classificação multiclasse.
+\end{itemize}
+O otimizador Adam é usado com função de perda de entropia cruzada categórica. O modelo é compilado e treinado por múltiplas épocas, com métricas de acurácia monitoradas em tempo real.
+
+\section{Treinamento, classificação e testes do modelo}
 
 
-\section{Treinamento, Classificação e Testes do Modelo}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-O modelo foi treinado por 25 épocas com \textit{batch size} de 32, utilizando o otimizador Adam.
+O modelo foi treinado por 25 épocas com \textit{batch size} de 32, usando o otimizador Adam.
 
-\section{Código-Fonte e Explicações}
+No notebook, o processo de treinamento envolve chamadas ao método \texttt{model.fit()}, com o conjunto de treino e validação definidos; o modelo é avaliado após cada época, e a acurácia, monitorada. Registra-se métricas como acurácia, precisão, recall e F1-score. O treinamento é executado sobre GPU quando disponível para otimizar o tempo de execução e, ao final, o modelo é testado com o conjunto separado de teste, quando são geradas predições que permitem calcular as métricas finais de desempenho.
+
+\section{Código-fonte e explicações}
+
 A seguir, um trecho simplificado do código desenvolvido:
 
+\section{Demonstração das entradas e saídas}
 
+O notebook mostra visualizações de amostras de imagens junto às suas classes previstas e verdadeiras. Usamos o matplotlib para exibir exemplos corretos e incorretos. As saídas incluem gráficos de acurácia e perda ao longo das épocas, além da matriz de confusão obtida com \texttt{sklearn.metrics}.
 
-\section{Demonstração das Entradas e Saídas}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 A Figura \ref{fig:exemplo} ilustra um exemplo de imagem de entrada e a respectiva previsão gerada pelo modelo.
 
+\section{Apresentação e discussão dos resultados}
 
-
-\section{Apresentação e Discussão dos Resultados}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Segundo o notebook, a acurácia média obtida nos dados de teste foi próxima de 63\%.
 
 \begin{table}[H]
 \centering
@@ -99,8 +121,13 @@ F1-score & XX.X \\
 \end{table}
 
 \section{Conclusão}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 O modelo proposto demonstrou resultados satisfatórios, podendo ser aprimorado com arquiteturas mais profundas ou técnicas de regularização mais avançadas.
+
+O trabalho desenvolvido no notebook evidencia o uso eficaz de redes neurais convolucionais para classificação de imagens médicas.
+As técnicas de pré-processamento e normalização aplicadas garantiram estabilidade no treinamento.
+O uso de TensorFlow/Keras e métricas do \texttt{scikit-learn} permitiu avaliar o modelo de forma detalhada.
+Como extensão futura, recomendamos ampliar a base de dados e testar arquiteturas mais complexas (como ResNet ou VGG), ou empregar regularização e dropout para aumentar a robustez do modelo.
 
 \bibliographystyle{plain}
 \begin{thebibliography}{9}
