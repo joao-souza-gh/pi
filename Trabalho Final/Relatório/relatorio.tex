@@ -34,6 +34,8 @@
     captionpos=b
 }
 
+\graphicspath{./Imagens/}
+
 \title{Desenvolvimento de modelo de classificação de imagens com redes neurais convolucionais}
 \date{27 de novembro de 2025}
 
@@ -98,7 +100,9 @@ A seguir, um trecho simplificado do código desenvolvido:
 
 O notebook mostra visualizações de amostras de imagens junto às suas classes previstas e verdadeiras. Usamos o matplotlib para exibir exemplos corretos e incorretos. As saídas incluem gráficos de acurácia e perda ao longo das épocas, além da matriz de confusão obtida com \texttt{sklearn.metrics}.
 
-A Figura \ref{fig:exemplo} ilustra um exemplo de imagem de entrada e a respectiva previsão gerada pelo modelo.
+A figura abaixo ilustra a matriz de confusão obtida.
+
+\includegraphics{Imagens/matriz.png}
 
 \section{Apresentação e discussão dos resultados}
 
@@ -121,7 +125,7 @@ F1-score & XX.X \\
 \end{table}
 
 \section{Conclusão}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
 O modelo proposto demonstrou resultados satisfatórios, podendo ser aprimorado com arquiteturas mais profundas ou técnicas de regularização mais avançadas.
 
 O trabalho desenvolvido no notebook evidencia o uso eficaz de redes neurais convolucionais para classificação de imagens médicas.
