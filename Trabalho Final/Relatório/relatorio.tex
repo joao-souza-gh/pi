@@ -25,7 +25,6 @@
     urlcolor=blue
 }
 
-
 \lstset{
     basicstyle=\footnotesize\ttfamily,
     breaklines=true,
@@ -38,16 +37,12 @@
 
 \title{Desenvolvimento de modelo de classificação de imagens com redes neurais convolucionais}
 \date{27 de novembro de 2025}
+\author{Alexandre R. Liermann, Gustavo Guerreiro, João M. S. da Silva e Souza}
 
 \begin{document}
 
 \maketitle
 
-\begin{flushright}
-    Alexandre Rosa Liermann\footnote{Graduando em Ciência da Computação -- FURB.} \\
-    Gustavo Guerreiro\footnote{Graduando em Ciência da Computação -- FURB.} \\
-    João Martinho Schneider da Silva e Souza\footnote{Graduando em Ciência da Computação -- FURB.}
-\end{flushright}
 
 
 \textit{\textbf{Palavras-chave:} Redes neurais convolucionais, aprendizado profundo, classificação, processamento de imagem.}
@@ -56,13 +51,16 @@
 
 Este trabalho tem como objetivo desenvolver um modelo de rede neural convolucional capaz de classificar imagens em diferentes categorias representando graus do mal de Alzheimer, a partir de uma base de dados pública. Com isto, esperamos facilitar o processo de detecção da doença em seus estágios iniciais com base em radiografias do cérebro humano.
 
-O projeto é conduzido em formato experimental, com treino, validação e teste sobre subconjuntos balanceados. O notebook utiliza TensorFlow e Keras para implementar e treinar redes neurais convolucionais, com foco em classificação multiclasse.
+O projeto é conduzido em formato experimental, com treino, validação e teste sobre subconjuntos balanceados. O notebook utiliza TensorFlow e Keras para implementar e treinar redes neurais convolucionais, com foco em classificação multiclasse, define sementes globais (NumPy, Python e TensorFlow) e força o determinismo com \texttt{tf.config.experimental.enable\_op\_determinism()}. Isto garante a reprodutibilidade dos experimentos.
 
 \section{Montagem e preparação da base de dados}
+
 A base de dados foi composta por imagens obtidas de fontes abertas.
 Antes do treinamento, as imagens foram redimensionadas, normalizadas e divididas em conjuntos de treino, validação e teste. A base foi disponibilizada nas categorias \textit{não demente}, \textit{muito levemente demente}, \textit{levemente demente} e \textit{moderadamente demente}, que para obter maior acurácia reestruturamos em apenas três categorias, removendo a \textit{levemente demente}.
 
 Os dados são carregados por meio de pipelines da API do TensorFlow Data e as imagens são processadas em lotes e padronizadas na sua dimensão e escala. Há uma função chamada \texttt{normalizar\_img} que converte os valores de pixels para a faixa [0,1]. O conjunto é dividido automaticamente entre treino e teste, o que dá uma certa garantia de aleatoriedade e equilíbrio entre as classes.
+
+No notebook, os conjuntos de treinamento e validação são criados com \texttt{validation\_split=0.2} dentro da chamada \texttt{image\_dataset\_from\_directory}, enquanto o conjunto dos testes é carregado separadamente. A pipeline também usa \texttt{dataset.cache().prefetch(AUTOTUNE)}, o que melhora o desempenho da leitura das imagens durante o treinamento.
 
 \subsection{Pré-processamento}
 \begin{itemize}
@@ -83,14 +81,16 @@ A arquitetura segue o padrão clássico das redes neurais conovolucionais para a
     \item Camada de flatten para transformar o mapa de características em vetor unidimensional;
     \item Camadas densas com ativação ReLU e uma camada final softmax para a classificação multiclasse.
 \end{itemize}
-O otimizador Adam é usado com função de perda de entropia cruzada categórica. O modelo é compilado e treinado por múltiplas épocas, com métricas de acurácia monitoradas em tempo real.
+
+O otimizador Adam é usado com função de perda de entropia cruzada categórica. O modelo é compilado e treinado por múltiplas épocas, com métricas de acurácia monitoradas em tempo real. No notebook, a CNN possui múltiplas camadas Conv2D com 32, 64 e 128 filtros, todas utilizando ativação ReLU e kernel 3x3, seguidas de MaxPooling2D. A parte final contém Flatten, Dense(128) e Dense(3) com softmax. Quando uma GPU compatível está disponível, o notebook habilita \texttt{mixed\_float16}, o que acelera o treino e reduz o consumo de memória.
 
 \section{Treinamento, classificação e testes do modelo}
 
-
-O modelo foi treinado por 25 épocas com \textit{batch size} de 32, usando o otimizador Adam.
+O modelo foi treinado por 50 épocas com \textit{batch size} de 256, usando o otimizador Adam, interrompendo antes por causa dp EarlyStopping (paciência 10, monitoramento por \texttt{val\_loss}).
 
 No notebook, o processo de treinamento envolve chamadas ao método \texttt{model.fit()}, com o conjunto de treino e validação definidos; o modelo é avaliado após cada época, e a acurácia, monitorada. Registra-se métricas como acurácia, precisão, recall e F1-score. O treinamento é executado sobre GPU quando disponível para otimizar o tempo de execução e, ao final, o modelo é testado com o conjunto separado de teste, quando são geradas predições que permitem calcular as métricas finais de desempenho.
+
+O notebook usa \texttt{jit\_compile=True} na compilação do modelo, ativando XLA para otimizar o desempenho, e, Após o treinamento, o modelo é salvo como \texttt{alzheimer\_previsao.keras}.
 
 \section{Código-fonte e explicações}
 
@@ -131,14 +131,7 @@ O modelo proposto demonstrou resultados satisfatórios, podendo ser aprimorado c
 O trabalho desenvolvido no notebook evidencia o uso eficaz de redes neurais convolucionais para classificação de imagens médicas.
 As técnicas de pré-processamento e normalização aplicadas garantiram estabilidade no treinamento.
 O uso de TensorFlow/Keras e métricas do \texttt{scikit-learn} permitiu avaliar o modelo de forma detalhada.
-Como extensão futura, recomendamos ampliar a base de dados e testar arquiteturas mais complexas (como ResNet ou VGG), ou empregar regularização e dropout para aumentar a robustez do modelo.
-
-\bibliographystyle{plain}
-\begin{thebibliography}{9}
-
-\bibitem{exemplo2025}
-Sobrenome, Nome. (2025). \textit{Título do Artigo}. IEEE.
-
-\end{thebibliography}
+Como extensão futura, recomendamos ampliar a base de dados e testar arquiteturas mais complexas (como ResNet ou VGG), ou empreg
+ar regularização e dropout para aumentar a robustez do modelo.
 
 \end{document}

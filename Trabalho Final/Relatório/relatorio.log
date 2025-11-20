@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.22)  13 NOV 2025 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.10.22)  20 NOV 2025 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,24 +372,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -449,76 +449,107 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 40.
+Package hyperref Info: Link coloring ON on input line 42.
 (./relatorio.out) (./relatorio.out)
 \@outlinefile=\write3
 \openout3 = `relatorio.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (38.7824pt too wide) in paragraph at lines 63--64
+[]\T1/cmr/m/n/12 No note-book, os con-jun-tos de treina-mento e val-i-dação são
+ cri-a-dos com \T1/cmtt/m/n/12 validation_split=0.2
+ []
 
-LaTeX Warning: No \author given.
+
+Overfull \hbox (12.45522pt too wide) in paragraph at lines 63--64
+\T1/cmr/m/n/12 car-regado sep-a-rada-mente. A pipeline tam-bém usa \T1/cmtt/m/n
+/12 dataset.cache().prefetch(AUTOTUNE)\T1/cmr/m/n/12 ,
+ []
 
 
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (14.3301pt too wide) in paragraph at lines 89--90
+\T1/cmr/m/n/12 ter-rompendo antes por causa dp EarlyStop-ping (paciên-cia 10, m
+on-i-tora-mento por \T1/cmtt/m/n/12 val_loss\T1/cmr/m/n/12 ). 
+ []
+
+
+Overfull \hbox (47.93999pt too wide) in paragraph at lines 93--94
+\T1/cmr/m/n/12 otimizar o de-sem-penho, e, Após o treina-mento, o mod-elo é sal
+vo como \T1/cmtt/m/n/12 alzheimer_previsao.keras\T1/cmr/m/n/12 . 
+ []
+
+
 
 [2]
+<Imagens/matriz.png, id=27, 481.3182pt x 395.3169pt>
+File: Imagens/matriz.png Graphic file (type png)
+<use Imagens/matriz.png>
+Package pdftex.def Info: Imagens/matriz.png  used on input line 105.
+(pdftex.def)             Requested size: 481.31703pt x 395.31592pt.
 
-LaTeX Warning: Reference `fig:exemplo' on page 3 undefined on input line 101.
+Overfull \hbox (43.69774pt too wide) in paragraph at lines 105--106
+[][] 
+ []
 
 
 
-[3] (./relatorio.aux)
+[3 <./Imagens/matriz.png>]
+
+[4] (./relatorio.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: AF44DE2F78F8A8BAA9FB0ED2B17169D7;1802.
+
+Package rerunfilecheck Warning: File `relatorio.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `relatorio.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  AF44DE2F78F8A8BAA9FB0ED2B17169D7;1802.
  ) 
 Here is how much of TeX's memory you used:
- 12111 strings out of 475178
- 181346 string characters out of 5766538
- 584431 words of memory out of 5000000
- 34931 multiletter control sequences out of 15000+600000
- 576454 words of font info for 82 fonts, out of 8000000 for 9000
+ 12085 strings out of 475178
+ 181068 string characters out of 5766538
+ 583399 words of memory out of 5000000
+ 34915 multiletter control sequences out of 15000+600000
+ 572738 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,8n,79p,565b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600p
-k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600p
+ 75i,8n,79p,598b,507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
-k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
-k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600p
+k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1200.600p
-k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600p
-k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600p
 k> </home/joao/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600p
 k>
-Output written on relatorio.pdf (3 pages, 90508 bytes).
+Output written on relatorio.pdf (4 pages, 121440 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
